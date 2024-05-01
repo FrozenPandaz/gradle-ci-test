@@ -11,6 +11,7 @@ jobs:
       GRADLE_OPTS: "-Dorg.gradle.daemon=false -Dorg.gradle.workers.max=2"
     docker:
       - image: cimg/openjdk:17.0-node
+    resource_class: medium
     steps:
       - checkout
 
@@ -20,13 +21,6 @@ jobs:
 
       - nx/set-shas:
           main-branch-name: 'main'
-
-      # Required for nx affected if we're on a branch
-      - when:
-          condition:
-            matches: { pattern: "^pull/.*", value: << pipeline.git.branch >> }
-          steps:
-            - run: git branch --track main origin/main
 
       - run: ./nx affected --base=$NX_BASE --head=$NX_HEAD -t test build
 
