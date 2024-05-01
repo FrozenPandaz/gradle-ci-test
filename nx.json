@@ -1,0 +1,37 @@
+{
+  "targetDefaults": {
+    "build": {
+      "cache": true,
+      "dependsOn": [
+        "^build"
+      ]
+    },
+    "lint": {
+      "cache": true
+    },
+    "test": {
+      "cache": true
+    },
+    "e2e": {
+      "cache": true
+    }
+  },
+  "installation": {
+    "version": "18.4.0",
+    "plugins": {
+      "@nx/gradle": "latest"
+    }
+  },
+  "plugins": [
+    {
+      "plugin": "@nx/gradle",
+      "options": {
+        "testTargetName": "test",
+        "classesTargetName": "classes",
+        "buildTargetName": "build"
+      }
+    }
+  ],
+  "nxCloudAccessToken": "YTc2Y2I0ZjgtOWJlNS00YWYxLWIyNDEtOTgxMzgyZThiNDEzfHJlYWQtd3JpdGU=",
+  "nxCloudUrl": "https://staging.nx.app"
+}
