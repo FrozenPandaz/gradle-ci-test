@@ -17,9 +17,9 @@
     }
   },
   "installation": {
-    "version": "18.4.0",
+    "version": "19.0.0-beta.8",
     "plugins": {
-      "@nx/gradle": "latest"
+      "@nx/gradle": "19.0.0-beta.8"
     }
   },
   "plugins": [
